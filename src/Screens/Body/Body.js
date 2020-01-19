@@ -24,7 +24,7 @@ export default class Body extends Component {
         setTimeout(function(){
             console.log('Invoked');
             this.setState({ opacity: 1, ringOpacity: 0 , ringDisplay: 'none' })
-        }.bind(this),10000);
+        }.bind(this),20000);
     }
     decrementIndex=()=>{
         
