@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Star-Wars-Universe/static/css/main.6e06c00b.chunk.css",
+    "main.js": "/Star-Wars-Universe/static/js/main.f2658cbc.chunk.js",
+    "main.js.map": "/Star-Wars-Universe/static/js/main.f2658cbc.chunk.js.map",
+    "runtime-main.js": "/Star-Wars-Universe/static/js/runtime-main.402cd693.js",
+    "runtime-main.js.map": "/Star-Wars-Universe/static/js/runtime-main.402cd693.js.map",
+    "static/js/2.4a3f703e.chunk.js": "/Star-Wars-Universe/static/js/2.4a3f703e.chunk.js",
+    "static/js/2.4a3f703e.chunk.js.map": "/Star-Wars-Universe/static/js/2.4a3f703e.chunk.js.map",
+    "index.html": "/Star-Wars-Universe/index.html",
+    "precache-manifest.c8248a304536fea30a7462004e33591d.js": "/Star-Wars-Universe/precache-manifest.c8248a304536fea30a7462004e33591d.js",
+    "service-worker.js": "/Star-Wars-Universe/service-worker.js",
+    "static/css/main.6e06c00b.chunk.css.map": "/Star-Wars-Universe/static/css/main.6e06c00b.chunk.css.map",
+    "static/js/2.4a3f703e.chunk.js.LICENSE": "/Star-Wars-Universe/static/js/2.4a3f703e.chunk.js.LICENSE",
+    "static/media/DarthVader.png": "/Star-Wars-Universe/static/media/DarthVader.1295343e.png",
+    "static/media/Yoda.png": "/Star-Wars-Universe/static/media/Yoda.47ad5904.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.402cd693.js",
+    "static/js/2.4a3f703e.chunk.js",
+    "static/css/main.6e06c00b.chunk.css",
+    "static/js/main.f2658cbc.chunk.js"
+  ]
+}
