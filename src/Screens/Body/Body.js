@@ -1,22 +1,30 @@
 import React, { Component } from 'react'
 import Pagination from './Pagination/Pagination'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight, faChevronLeft  } from '@fortawesome/free-solid-svg-icons'
+import { faCircle } from '@fortawesome/free-regular-svg-icons'
 import './Body.css'
-
-
 
 export default class Body extends Component {
     constructor()
     {
         super();
         this.decrementIndex=this.decrementIndex.bind(this);
-        this.changeRenderingState=this.changeRenderingState.bind(this);
         this.state={
             index: 0,
             isLoading: true,
-            coordinates: [ '-5%','-105%','-205%','-305%','-397%','-494%','-584%','-679%','-775%' ]
+            opacity: 0,
+            coordinates: [ '-5%','-105%','-205%','-305%','-397%','-494%','-584%','-679%','-775%' ],
+            ringOpacity: 1,
+            ringDisplay: 'block'
         }
+    }
+    async componentDidMount()
+    {
+        setTimeout(function(){
+            console.log('Invoked');
+            this.setState({ opacity: 1, ringOpacity: 0 , ringDisplay: 'none' })
+        }.bind(this),10000);
     }
     decrementIndex=()=>{
         
@@ -52,36 +60,26 @@ export default class Body extends Component {
             )
         
         }
-        changeRenderingState=(flag)=>{
-            
-            if(flag){
-                this.setState({ isLoading: false })
-                alert('Invoked');
-            }
-            
-        }
     render() {
-
+        
         return (
             <div>
-               {/* {
-                   (this.state.isLoading) ? <div>LOADING...</div> : <div className={'Parent'}>
-                <this.ArrowLeft />
-                <Pagination offset={this.state.coordinates[this.state.index]} setRendering={()=> this.changeRenderingState}/>
-                <this.ArrowRight />
+             <div className={'loadingRings'} style={{ opacity: this.state.ringOpacity, display: this.state.ringDisplay }}>
+             <FontAwesomeIcon icon={faCircle}  id="circle1"/>
+             <FontAwesomeIcon icon={faCircle}  id="circle2"/>
             </div>
-               }  */}
+            <div style={{ opacity: this.state.opacity}}>
                <div className={'Parent'}>
                 <this.ArrowLeft />
-                <Pagination offset={this.state.coordinates[this.state.index]} setRendering={()=> this.changeRenderingState}/>
+                <Pagination offset={this.state.coordinates[this.state.index]}/>
                 <this.ArrowRight />
             </div>
-            <div>
+            </div>
+           
+            </div>
 
-            </div>
-            </div>
             
+
         )
-       
     }
 }

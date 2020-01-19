@@ -61,3 +61,39 @@
     transform: translateX(0px);
    }
 }
+.loadingRings{
+     z-index: 5;
+     margin: auto;
+     margin-top: 20%;
+     height: 2vh;
+     width: 2em;
+     
+}
+.loadingRings #circle1{
+    color: white;
+    position: absolute;
+    transform: scale(0);
+    animation: ripple 1.5s infinite;
+}
+.loadingRings #circle2{
+    color: white;
+    position: absolute;
+    transform: scale(0);
+    animation: ripple 1.5s infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes ripple{
+    0%{
+        transform: scale(0);
+        opacity: 1;
+    }
+    95%{
+        transform: scale(4);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(0);
+        opacity: 0;
+    }
+}

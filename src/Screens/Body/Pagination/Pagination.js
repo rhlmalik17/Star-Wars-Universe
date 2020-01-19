@@ -36,15 +36,6 @@ export default class Pagination extends Component {
                 }
        }
     }
-    setBoolean=(flag)=>{
-        
-        if(flag)
-        {
-            console.log('INVOKED');
-            this.props.setRendering(true);
-        }
-        
-    }
     render() {
         if(!this.state.isLoading)
         {
@@ -54,12 +45,8 @@ export default class Pagination extends Component {
             <div className={'Pagination'} style={{ transform: 'translateX('+this.props.offset+')', }}>
                 {
                     this.state.tables.map((table,i)=>{
-                        if(i===this.state.tables.length-1)
-                        {
-                            this.setBoolean(true);
-                        }
                         return (
-                            <Table data={table} key={i} setFlag={this.setBoolean}/>
+                            <Table data={table} key={i}/>
                         )
                     })    
                 }
