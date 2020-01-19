@@ -1,0 +1,16 @@
+.Pagination
+{
+    /* background-color: red; */
+    display: flex;
+    margin-top: 5%;
+    width: 50em;
+    
+}
+.Pallete{
+    width: 43em;
+    /* margin: auto; */
+    border: 2px solid #e35252;
+    margin-top: 10vh;
+    border-radius: 10px;
+    overflow: hidden;
+}

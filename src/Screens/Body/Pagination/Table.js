@@ -7,32 +7,23 @@ export default class Table extends Component {
         this.componentDidMount=this.componentDidMount.bind(this);
         this.state={
           isLoading: true,
-          people: [],
           worlds: ['','','','','','','','','','','','','','']
         }
+        
     }
     async componentDidMount()
     {
-       await fetch("https://swapi.co/api/people/?page=1")
-                    .then(function(response){
-                        return response.json();
-                    }).then((response)=>{
-                      this.setState({ people: response.results })
-                    })
-                    .catch((error)=>{
-                        console.log(error);
-                    });
+        console.log();
         let count=0;
-        await this.state.people.map(async (object,i)=>{
+        await this.props.data.map(async (object,i)=>{
     
              await fetch(object.homeworld)
             .then((response)=> response.json())
             .then((response)=>{
                 this.state.worlds[i]=response.name;
                 count++;
-                if(count===this.state.people.length)
+                if(count===this.props.data.length)
                 {
-                    console.log(this.state.people.length);
                     this.setState({ isLoading: false});
                 }
                 
@@ -46,9 +37,10 @@ export default class Table extends Component {
             return (
                 
                 <div className="schema">
-                    <table border={1} style={{ borderColor: 'white' }} cellSpacing={20}>
+                    <table>
                         <tbody>
                         <tr>
+                            <th>SNo.</th>
                             <th>Name</th>
                             <th>Gender</th>
                             <th>Height</th>
@@ -57,11 +49,13 @@ export default class Table extends Component {
                         </tr>
                         </tbody>
                         {
-                            this.state.people.map((person, i)=>{
+                            this.props.data.map((person, i)=>{
                                 index++;
+                                
                                 return (
                                     <tbody key={i} >
                                     <tr>
+                                        <td>{index+1+". "}</td>
                                         <td>{person.name}</td>
                                         <td>{person.gender}</td>
                                         <td>{person.height}</td>
