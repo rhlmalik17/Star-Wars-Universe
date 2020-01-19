@@ -67,6 +67,7 @@ export default class Body extends Component {
              <div className={'loadingRings'} style={{ opacity: this.state.ringOpacity, display: this.state.ringDisplay }}>
              <FontAwesomeIcon icon={faCircle}  id="circle1"/>
              <FontAwesomeIcon icon={faCircle}  id="circle2"/>
+             <span>Please Wait...Fetching Data</span>
             </div>
             <div style={{ opacity: this.state.opacity}}>
                <div className={'Parent'}>

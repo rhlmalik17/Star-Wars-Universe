@@ -65,7 +65,7 @@
      z-index: 5;
      margin: auto;
      margin-top: 20%;
-     height: 2vh;
+     height: 10vh;
      width: 2em;
      
 }
@@ -89,11 +89,18 @@
         opacity: 1;
     }
     95%{
-        transform: scale(4);
+        transform: scale(8);
         opacity: 0;
     }
     100%{
         transform: scale(0);
         opacity: 0;
     }
+}
+.loadingRings span{
+    position: absolute;
+    color: white;
+    transform: translate(-45%,70px);
+    font-size: 2em;
+    font-family: monospace;
 }
